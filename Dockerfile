@@ -1,8 +1,8 @@
 FROM frolvlad/alpine-glibc:alpine-3.4
 USER root
 
-ENV CONDA_VERSION 4.1.11
-ENV CONDA_SHA1 b4e72aae750657aea738fca1d7efad098b39540a
+ENV CONDA_VERSION 4.2.12
+ENV CONDA_SHA1 f43e58f0f2d2f64dcd4924edb8fbd4f4654db086
 
 # We need to install openssl so that wget can fetch from HTTPS
 RUN apk update && \
@@ -32,8 +32,6 @@ ENV PATH "/bin:/sbin:/opt/anaconda/bin:/usr/bin"
 RUN rm Miniconda3-$CONDA_VERSION-Linux-x86_64.sh
 
 RUN conda install -y conda=${CONDA_VERSION}
-
-#RUN conda install -y ipython-notebook=4.0.4
 
 ENTRYPOINT [ "/sbin/tini", "--" ]
 CMD [ "/bin/bash" ]
