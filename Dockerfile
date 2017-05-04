@@ -1,8 +1,8 @@
-FROM frolvlad/alpine-glibc:alpine-3.4
+FROM frolvlad/alpine-glibc:alpine-3.5
 USER root
 
-ENV CONDA_VERSION 4.2.12
-ENV CONDA_SHA1 f43e58f0f2d2f64dcd4924edb8fbd4f4654db086
+ENV CONDA_VERSION 4.3.11
+ENV CONDA_SHA1 ab0e987817c0451e50e4f53da3fa070dc392af43
 
 # We need to install openssl so that wget can fetch from HTTPS
 RUN apk update && \
